@@ -10,7 +10,7 @@ try:
     st.session_state.chat = model.start_chat(history=[])
 st.title( 'Gemini Pro Test')
 
-  def role_to_streamlit(role:str) →> str:
+  def role_to_streamlit(role:str) -> str:
     if role == 'model':
       return 'assistant'
     else:
