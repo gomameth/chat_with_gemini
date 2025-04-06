@@ -22,7 +22,7 @@ try:
       
   if prompt := st.chat_input("Text Here"):
       st.chat_message('user').markdown(prompt)
-      response = st.session_state.hat.send_message(prompt)
+      response = st.session_state.chat.send_message(prompt)
       with st.chat_message('assistant'):
           st.markdown(response.text)
         
