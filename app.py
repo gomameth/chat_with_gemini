@@ -18,11 +18,11 @@ try:
       
   for message in st.session_state.chat.history:
     with st.chat_message(role_to_streamlit(message.role)):
-        st.markdown (message.parts[0].text)
+        st.markdown(message.parts[0].text)
       
-  if prompt := st. chat_input("Text Here"):
-      st. chat_message ('user').markdown (prompt)
-      response = st.session_state. hat.send_message (prompt)
+  if prompt := st.chat_input("Text Here"):
+      st.chat_message ('user').markdown (prompt)
+      response = st.session_state.hat.send_message (prompt)
       with st.chat_message('assistant'):
           st.markdown(response.text)
         
