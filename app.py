@@ -18,7 +18,7 @@ st.title( 'Gemini Pro Test')
       
   for message in st.session_state.chat.history:
     with st.chat_message(role_to_streamlit(message.role)):
-        st-markdown (message.parts 101.text)
+        st.markdown (message.parts 101.text)
       
   if prompt := st. chat_input("Text Here"):
       st. chat_message ('user').markdown (prompt)
