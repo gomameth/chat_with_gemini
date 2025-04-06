@@ -23,8 +23,8 @@ st.title( 'Gemini Pro Test')
   if prompt := st. chat_input("Text Here"):
       st. chat_message ('user').markdown (prompt)
       response = st.session_state. hat.send_message (prompt)
-      with st. chat_message( 'assistant'):
-          st-markdown (response.text)
+      with st.chat_message( 'assistant'):
+          st.markdown(response.text)
         
 except Exception as e:
     st.error(f'An error occurred {e}' )
