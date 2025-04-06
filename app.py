@@ -2,7 +2,7 @@ import streamlit as st
 import google.generativeai as genai
 
 try:
-  key = st.secrets['AIzaSyDWgnaByVSYbq-bpBHcJnYsMSHLrZSv_HA']
+  key = st.secrets['gemini_api_key']
   genai.configure(api_key=key)
   model = genai.GenerativeModel( 'gemini-1.5-flash')
   
@@ -18,12 +18,12 @@ st.title( 'Gemini Pro Test')
       
   for message in st.session_state.chat.history:
     with st.chat_message(role_to_streamlit(message.role)):
-        st.markdown (message.parts 101.text)
+        st.markdown (message.parts[0].text)
       
   if prompt := st. chat_input("Text Here"):
       st. chat_message ('user').markdown (prompt)
       response = st.session_state. hat.send_message (prompt)
-      with st.chat_message( 'assistant'):
+      with st.chat_message('assistant'):
           st.markdown(response.text)
         
 except Exception as e:
